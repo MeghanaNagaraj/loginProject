@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Delete account page</title>
+  <!--css file-->
+  <link rel="stylesheet" href="css/styles.css">
+  <!--icon-->
+  <link rel="icon" href="images/mcircrop.jpg">
+  <style>
+    .container {
+      background-color: #fff;
+      width: 440px;
+      height: 500px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-header">
+      <img src="images/mcircrop.jpg" alt="" width="60" height="60">
+      <h1>Why do you want to delete your account?</h1>
+    </div>
+
+    <form>
+
+      <div class="form-control">
+        <textarea id="deleteAcc" name="deleteAcc" rows="7" cols="59" placeholder="Type here..."></textarea>
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <textarea id="deleteAccFeed" name="deleteAccFeed" rows="4" cols="59" placeholder="Any feedback..."></textarea>
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <textarea id="deleteAccRate" name="deleteAccRate" rows="2" cols="59" placeholder="Rating from 1-10..."></textarea>
+        <small>Error message</small>
+      </div>
+      <button type="button" name="button" id="b1" style="width: 20%;position:relative;left:90px;">Back</button>
+      <button type="submit" name="submit" id="delAccSubmit">Submit</button>
+    </form>
+  </div>
+  <p class="copyright">&copy; Meghana</p>
+  <script src="app7.js" charset="utf-8"></script>
+</body>
+
+</html>

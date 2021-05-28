@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Login page</title>
+  <!--css file-->
+  <link rel="stylesheet" href="css/styles.css">
+  <!--icon-->
+  <link rel="icon" href="images/mcircrop.jpg">
+</head>
+
+<body style="background-color: #b2ec5d">
+  <div class="container">
+    <div class="form-header">
+      <img src="images/mcircrop.jpg" alt="" width="60" height="60">
+      <h1>Sign in here</h1>
+      <h4 id="here" style="color: #e74c3c;"></h4>
+    </div>
+
+    <form>
+
+      <div class="form-control">
+        <label for="">Email address</label>
+        <input type="text" class="input-box" name="email" placeholder="Email address" id="loginEmail">
+        <small>Error message</small>
+      </div>
+
+      <div class="form-control">
+        <label for="">Password</label>
+        <input type="password" class="input-box" name="password" placeholder="Password" id="loginPwd">
+        <small>Error message</small>
+      </div>
+
+      <button type="submit" name="submit" id="loginSubmit">Sign in</button>
+      <p class="already"><a href="forgotPassword.html">Forgot password</a></p>
+      <p class="already">Not registered yet? <a href="register.html">Click here to register</a></p>
+    </form>
+  </div>
+  <p class="copyright">&copy; Meghana</p>
+  <script src="app2.js" charset="utf-8"></script>
+</body>
+
+</html>
