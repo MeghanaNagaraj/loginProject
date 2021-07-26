@@ -4,11 +4,12 @@
 <head>
   <meta charset="utf-8">
   <title>home page</title>
+  
 
   <!-- Bootstrap core CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <!--icon-->
-  <link rel="icon" href="images/mcircrop.jpg">
+  <link rel="icon" href="../cdn/images/mcircrop.jpg">
   <!--js-->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -17,13 +18,13 @@
   <style media="screen">
     #regUsers {
       margin: 35px;
-      color: #fff;
-      font-size: 2.5rem;
+      color:black;
+      font-size: 2rem;
       font-weight: bold;
     }
 
     th {
-      color: #E9EAE0;
+      color: black;
     }
 
     td {
@@ -45,13 +46,25 @@
     #tls table th {
       padding: 10px 18px;
     }
+    .homeButton{
+      width: 25%;
+      border: 1.3px solid #0d6efd;
+      border-radius: 14px;
+      padding: 11px;
+      font-size: 15px;
+      margin: 200px auto 10px;
+      outline: none;
+      cursor: pointer;
+      color: #fff;
+      background: -webkit-linear-gradient(left, #0530ad, #0CAFFF);
+    }
   </style>
 </head>
 
-<body class="text-center" style="background: -webkit-linear-gradient(left,#0CAFFF,#0530ad);font-family: sans-serif;">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body class="text-center" style="font-family: sans-serif;">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: -webkit-linear-gradient(left,#0CAFFF,#0530ad);">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"><img src="images/mcircrop.jpg" alt="" width="30" height="30"></a>
+      <a class="navbar-brand" href="index.html"><img src="../cdn/images/mcircrop.jpg" alt="" width="30" height="30"></a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
@@ -78,16 +91,16 @@
               <a class="dropdown-item" href="#" id="logout">Logout</a>
             </div>
           </li>
-          <li class="nav-item nav-link" id="myname" style="color:blue;position:absolute;right:90px;"></li>
+          <li class="nav-item nav-link" id="myname" style="color:white;position:absolute;right:90px;"></li>
         </ul>
       </div>
     </div>
   </nav>
   <h2 id="regUsers"></h2>
   <div id="tls"></div>
-  <div id="content"></div>
+  <div id="content"><button type="submit" class="homeButton" id="homeSubmit">Update My Profile</button></div>
 
-  <script src="app4.js" charset="utf-8"></script>
+  <script src="../cdn/js/home.js" charset="utf-8"></script>
 </body>
 <footer>
   <p class="mt-5 mb-3 text-muted">&copy; Meghana</p>

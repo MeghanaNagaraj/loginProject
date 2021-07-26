@@ -76,6 +76,7 @@ window.onload = function() {
           }
         }
         alert("Account deleted");
+        localStorage.removeItem('loginInfo');
         window.location.href = "login.html";
       } else {
         var user = {
@@ -102,6 +103,7 @@ window.onload = function() {
           }
         }
         alert("Account deleted");
+        localStorage.removeItem('loginInfo');
         window.location.href = "login.html";
       }
     }

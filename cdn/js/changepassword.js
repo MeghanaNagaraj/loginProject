@@ -10,6 +10,8 @@ window.onload = function() {
     console.log("change password entered");
     var existPwd = document.getElementById("existingPwd").value.trim();
     var newPwd = document.getElementById("newPd").value.trim();
+    console.log(existPwd);
+    console.log(newPwd);
     checkInputs();
 
     function checkInputs() {
@@ -40,13 +42,17 @@ window.onload = function() {
     }
 
     if (pwdFlag == 1 && newPwdFlag == 1) {
+      console.log("ennnntered");
       if (localStorage.getItem('users') == null) {
         console.log("no users yet so register");
       } else {
         var old_users = JSON.parse(localStorage.getItem('users'));
+        var userLogin = JSON.parse(localStorage.getItem('loginInfo'));
+        var name = userLogin[0].name;
+        var email = userLogin[0].email;
         var count = 0;
         for (var i = 0; i < old_users.length; i++) {
-          if (old_users[i].pwd == existPwd) {
+          if (old_users[i].name == name && old_users[i].email == email && old_users[i].pwd == existPwd) {
             count = 1;
             old_users[i].pwd = newPwd;
             localStorage.setItem('users', JSON.stringify(old_users));
@@ -54,8 +60,13 @@ window.onload = function() {
           }
         }
         if (count == 0) {
+          console.log(count);
           document.getElementById("here").innerText = "Invalid credentials";
+          document.getElementById("existingPwd").style.borderColor="black";
+          document.getElementById("newPd").style.borderColor="black";
         } else {
+          console.log(count);
+          document.getElementById("here").innerText = "";
           window.location.href = "index.html";
         }
       }

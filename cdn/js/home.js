@@ -4,6 +4,12 @@ window.onload = function() {
   function noBack() {
     window.history.forward();
   }
+  
+  document.getElementById("homeSubmit").addEventListener("click", function() {
+    event.preventDefault();
+    window.location.href = "myProfile.html";
+  });
+
   //index page code
   var userLogin = JSON.parse(localStorage.getItem('loginInfo'));
   var name = userLogin[0].name;
@@ -20,39 +26,47 @@ window.onload = function() {
   document.getElementById("uList").addEventListener("click", function() {
     event.preventDefault();
     console.log("user list clicked");
-    var titles = ['<a style="color: #B8390E;text-decoration: underline;">Name</a>', 'Contact no', 'Date of Birth', 'Gender', 'College', 'Skills', 'Languages spoken'];
+    var titles = ['<a style="color: blue;text-decoration: underline;">Name</a>', 'Contact no', 'Date of Birth', 'Gender', 'College', 'Skills', 'Languages spoken'];
     var dcol = ['name', 'contactNumber', 'dob', 'gender', 'college', 'skills', 'langSpoken'];
     var old_users = JSON.parse(localStorage.getItem('userAllInfo'));
     console.log(old_users);
-    var tbl = document.createElement("table");
-    var rw = tbl.insertRow();
-    for (var k = 0; k < titles.length; k++) {
+    if (old_users != null){
+
+     var tbl = document.createElement("table");
+     var rw = tbl.insertRow();
+     for (var k = 0; k < titles.length; k++) {
       var thead = document.createElement('th');
       thead.innerHTML = titles[k];
       thead.setAttribute("id", k);
       thead.setAttribute("data-order", "asc");
       thead.setAttribute("data-column", dcol[k]);
       rw.appendChild(thead);
-    }
-    document.getElementById("regUsers").innerText = "Registered users";
-    document.getElementById("tls").innerHTML = "";
-    document.getElementById("tls").appendChild(tbl);
-    buildTable(old_users);
+     }
+     document.getElementById("regUsers").innerText = "Registered users";
 
-    function buildTable(old_users) {
-      var table = document.createElement("table");
+     buildTable(old_users);
+
+     function buildTable(old_users) {
       for (var i = 0; i < old_users.length; i++) {
         var j = 0;
-        var row = table.insertRow(i);
+        var row = tbl.insertRow();
         for (let prop in old_users[i]) {
           var cell = row.insertCell(j);
           cell.innerHTML = old_users[i][prop];
           j++;
         }
       }
-      document.getElementById("content").innerHTML = "";
-      document.getElementById("content").appendChild(table);
+        document.getElementById("content").innerHTML = "";
+        document.getElementById("tls").innerHTML = "";
+        document.getElementById("tls").appendChild(tbl);
+      
+     }
     }
+    else{
+      document.getElementById("regUsers").innerText = "Registered users";
+      document.getElementById("tls").innerHTML = "Update your profile to view this";
+    }
+    
 
     $('th').on('click', function() {
       var order = $(this).data('order');
@@ -110,10 +124,9 @@ window.onload = function() {
         rw1.appendChild(thead);
       }
 
-      var table1 = document.createElement("table");
       for (var i = 0; i < users_deleted.length; i++) {
         var j = 0;
-        var row1 = table1.insertRow(i);
+        var row1 = tbl1.insertRow();
         for (let prop in users_deleted[i]) {
           var cell1 = row1.insertCell(j);
           cell1.innerHTML = users_deleted[i][prop];
@@ -122,9 +135,8 @@ window.onload = function() {
       }
       document.getElementById("regUsers").innerText = "Accounts deleted";
       document.getElementById("tls").innerHTML = "";
-      document.getElementById("tls").appendChild(tbl1); //1
       document.getElementById("content").innerHTML = "";
-      document.getElementById("content").appendChild(table1); //2
+      document.getElementById("tls").appendChild(tbl1); //1
     } else {
       document.getElementById("regUsers").innerText = "Accounts deleted";
       document.getElementById("tls").innerText = "";

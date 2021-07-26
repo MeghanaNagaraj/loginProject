@@ -66,6 +66,9 @@ window.onload = function() {
         }
         if (count == 0) {
           document.getElementById("here").innerText = "Invalid credentials";
+          document.getElementById("existingName").style.borderColor="black";
+          document.getElementById("existingEmail").style.borderColor="black";
+          document.getElementById("newPwd").style.borderColor="black";
         } else {
           window.location.href = "login.html";
         }

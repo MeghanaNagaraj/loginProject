@@ -71,7 +71,7 @@ window.onload = function() {
     }
 
     function isEmail(email) {
-      return /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/.test(email);
+      return /^[a-zA-Z0-9+_.-]+@[a-zA-Z.-]+.[a-zA-Z.-]+$/.test(email);
     }
 
     //code
